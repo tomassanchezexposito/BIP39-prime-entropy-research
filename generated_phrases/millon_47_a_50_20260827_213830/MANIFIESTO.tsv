@@ -1,0 +1,5 @@
+valor	parte	archivo	grupos_generados	primer_grupo_global	ultimo_grupo_global	primera_posicion_absoluta	siguiente_posicion_absoluta	estado
+47	1	secuencias_valor_000047_parte_0001.txt	1000000	1	1000000	47	11271487897	COMPLETO
+48	1	secuencias_valor_000048_parte_0001.txt	1000000	1000001	2000000	48	11271499537	COMPLETO
+49	1	secuencias_valor_000049_parte_0001.txt	1000000	2000001	3000000	49	11273940913	COMPLETO
+50	1	secuencias_valor_000050_parte_0001.txt	1000000	3000001	4000000	50	11269182858	COMPLETO
