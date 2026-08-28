@@ -1,0 +1,7 @@
+# Generated phrase corpora can become very large. Install Git LFS before adding them.
+generated_phrases/**/*.txt filter=lfs diff=lfs merge=lfs -text
+# Keep repository status/manifest files as ordinary text.
+generated_phrases/README.md -filter -diff -merge text
+generated_phrases/STATUS.md -filter -diff -merge text
+generated_phrases/MANIFEST.tsv -filter -diff -merge text
+generated_phrases/IMPORT_NOTES.md -filter -diff -merge text

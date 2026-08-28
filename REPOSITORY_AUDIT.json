@@ -1,0 +1,191 @@
+{
+  "generated_at_utc": "2026-08-28T08:35:24.189164+00:00",
+  "file_count": 37,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 432,
+      "sha256": "77808e7c98d4da8500a260caf2e7ad4759109b2be405ed31c4dce5ab308f2282"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 226,
+      "sha256": "b37852af1426378e162a4d05c2910b296e7e17d7f79590782ab4ffafb2301a55"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 6383,
+      "sha256": "d64485504add0574acc5cf4b6c7e1cc6c0f5a860f40cb3241f5d9f143ccc684c"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "bytes": 3353,
+      "sha256": "6faf03f042aa46205e1ee71ac9729d094e02b08f9cfab554a0806d66b6a67904"
+    },
+    {
+      "path": "LICENSE-NOT-SELECTED.md",
+      "bytes": 274,
+      "sha256": "6062fe39c9e2d934ff78e4c3593f24542324cc62d502aaedaf54500c3115776d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3910,
+      "sha256": "6453358a9bea3949103e49c842befcffd2456042151d4b087fbcece9225adab4"
+    },
+    {
+      "path": "REFERENCES.md",
+      "bytes": 1603,
+      "sha256": "a866a20259ae3064d30f2a2aa797b3d00e82cbf1811c72fdde46fc6bb363feb7"
+    },
+    {
+      "path": "REPOSITORY_MAP.md",
+      "bytes": 1457,
+      "sha256": "c65ab28bbfdafdf05177aa5ee8de719b7ff9abe8f506a96da583a7de657c357a"
+    },
+    {
+      "path": "SOURCE_AUDIT.md",
+      "bytes": 1375,
+      "sha256": "d00c262eb375f361636afce2c4c82598b367d84e97a041f9fdbff506f8c95301"
+    },
+    {
+      "path": "docs/Architecture_of_Infinity_EN_PUBLIC_SAFE.docx",
+      "bytes": 51641,
+      "sha256": "6716c70e0e9b59921559a96dea3728798cb4f82553d0c91bebc14e9b5cfd8fbf"
+    },
+    {
+      "path": "docs/Architecture_of_Infinity_EN_PUBLIC_SAFE.md",
+      "bytes": 535,
+      "sha256": "14661bb51a06a1360cb30f03d4f679ff3210de8680ecba031adae01e8ae9da77"
+    },
+    {
+      "path": "docs/PROGRAM_INDEX.md",
+      "bytes": 787,
+      "sha256": "9274020444d8efb688789f22f058329d627001fbcb6f620fa0c3a18c51176145"
+    },
+    {
+      "path": "docs/PUBLICATION_NOTE.md",
+      "bytes": 942,
+      "sha256": "3d9843b3b2caeb11bf3e2e476eed8a304ad2a793f5005a13e45ed53bfdd6db28"
+    },
+    {
+      "path": "docs/programs/Generador_V2_4_MultiGrupos.md",
+      "bytes": 1559,
+      "sha256": "bef1cda049ead7d8f928bc8bbdbdfc29e3283f0182b3b8006eca86302921ddcb"
+    },
+    {
+      "path": "docs/programs/Generador_V2_7_AUTO_Turbo_Cronometros.md",
+      "bytes": 2183,
+      "sha256": "037963ecfe4755dc61a6b596ed1f509017f037c989016c79f30bda62ce7fe653"
+    },
+    {
+      "path": "docs/programs/bip39_btc_generador_direcciones_desde_archivo_v3_0.md",
+      "bytes": 1371,
+      "sha256": "0094d9e8a1c2208895f5a1eb9121c693bd271dbccdf306084f1a676bbe348408"
+    },
+    {
+      "path": "docs/programs/buscador_desde_archivo_v2_2.md",
+      "bytes": 1516,
+      "sha256": "1a1ca19493972fe4e632265e33eebc8ab1e6f1c8b6d9b219fabad6bdbbe121fa"
+    },
+    {
+      "path": "docs/programs/generador_12_palabras.md",
+      "bytes": 2208,
+      "sha256": "fe9f56c74cb6c369cd0aedddb8f27d18c561add035ce8b3ba59e14e864f24565"
+    },
+    {
+      "path": "docs/programs/generador_24_palabras_infinita_filtro_lineal_total.md",
+      "bytes": 1373,
+      "sha256": "37a7329b147ddb2a12dc38ef956129fe3f7a7b0d2fac34385410c4c2026de16f"
+    },
+    {
+      "path": "docs/programs/generador_v3_finita_filtro_total_reforzado.md",
+      "bytes": 1525,
+      "sha256": "8250eda1672666d45922f3c6dd2e532295a034216def9b2add372f2e1bad00a1"
+    },
+    {
+      "path": "docs/programs/generador_v3_infinita_filtro_total_reforzado.md",
+      "bytes": 1710,
+      "sha256": "329784c0ab54b8fba22411d5cdbd63016e72d4deeadb0a6af3f60d631f0318ba"
+    },
+    {
+      "path": "generated_phrases/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "generated_phrases/DATASET_STATUS.json",
+      "bytes": 138,
+      "sha256": "2fb6e934fc9e8e806a05fcec2114d3869bac9b0d399babbeccc37080c15e28dd"
+    },
+    {
+      "path": "generated_phrases/IMPORT_NOTES.md",
+      "bytes": 690,
+      "sha256": "a077b5d3cd51460f665a8e2dfa32e5ca85f3a4dd128d616968392d18df7710fe"
+    },
+    {
+      "path": "generated_phrases/MANIFEST.tsv",
+      "bytes": 46,
+      "sha256": "156787e5f4a26031baf595364c665e3f60d05328c0958931f5dd651bc8cc803c"
+    },
+    {
+      "path": "generated_phrases/README.md",
+      "bytes": 945,
+      "sha256": "93032f1c9d12b999e9a2875cf4df5b048cb7931ee977e99611ba9474ffade7a5"
+    },
+    {
+      "path": "generated_phrases/STATUS.md",
+      "bytes": 250,
+      "sha256": "0c43bea25b4311f4a12c53a845c563f5fac2b285f64f7dd2204cfb6379cea82c"
+    },
+    {
+      "path": "scripts/update_generated_phrases_index.py",
+      "bytes": 2174,
+      "sha256": "02aa2e766664eae4b162c3716032fdb2abd47a265cf74fb81085f819baab80a7"
+    },
+    {
+      "path": "src/Generador_V2_4_MultiGrupos.py",
+      "bytes": 23599,
+      "sha256": "4b5e6861ce78a6c7bd1a02863c6be521cede7e1a77fa3fcf2af2f392ba681e95"
+    },
+    {
+      "path": "src/Generador_V2_7_AUTO_Turbo_Cronometros.py",
+      "bytes": 70258,
+      "sha256": "ead1d55bad985e38a06b3e3f3b8342bff5cb15927607282e029597b2d1d24427"
+    },
+    {
+      "path": "src/bip39_btc_generador_direcciones_desde_archivo_v3_0.py",
+      "bytes": 41824,
+      "sha256": "0a58f10294e07d02b0ee0e7cb63f21f5a5e11ef21b3bac371157864eccd59015"
+    },
+    {
+      "path": "src/buscador_desde_archivo_v2_2.py",
+      "bytes": 39522,
+      "sha256": "0d166053978922ca13d6e9414a65a2b0a236a6c2d44fb87631bb8efea5ea328d"
+    },
+    {
+      "path": "src/datos_2048.json",
+      "bytes": 168777,
+      "sha256": "5e1446a5e5244495d55996b123cea7b62290eb874679f0ce222fe8d1e43520a3"
+    },
+    {
+      "path": "src/generador_12_palabras.py",
+      "bytes": 13045,
+      "sha256": "09c823ac0abc2ad31ecbe9a594ada147d393b2240177094c41948ee969df10f3"
+    },
+    {
+      "path": "src/generador_24_palabras_infinita_filtro_lineal_total.py",
+      "bytes": 26144,
+      "sha256": "6c17ebcff61fd6f0400d5139c0826a4159342d69e41582596b1aef75bdcfb429"
+    },
+    {
+      "path": "src/generador_v3_finita_filtro_total_reforzado.py",
+      "bytes": 19667,
+      "sha256": "ccf82195d8fd4e94224be92af3d019ec4a9d80ec886686fa4c9424bb73388fb8"
+    },
+    {
+      "path": "src/generador_v3_infinita_filtro_total_reforzado.py",
+      "bytes": 25217,
+      "sha256": "4d6873cec8d6e34ecf93b5e2e859ca688c52251978d2dab94b3759078a1d7ce6"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+historial_hashes.db
+.DS_Store
+Thumbs.db
+*.tmp
+*.part
+# Local/private phrase staging must not be committed accidentally.
+generated_phrases/private/
+generated_phrases/*.private.txt
