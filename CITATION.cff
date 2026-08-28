@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: "Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research"
+message: "If you use this repository, please cite it using the metadata from this file."
+type: software
+authors:
+  - given-names: "Tomas"
+    family-names: "Sanchez Exposito"
+    alias: "tomassanchezexposito"
+repository-code: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
+url: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
+abstract: >-
+  Experimental research repository linking prime-number positional mappings,
+  BIP-39 entropy construction, mnemonic generation, and Bitcoin wallet security,
+  with Python generators, checksum analysis, Native SegWit tooling, and
+  reproducible technical documentation.
+keywords:
+  - BIP-39
+  - Bitcoin
+  - wallet security
+  - entropy
+  - mnemonic
+  - Native SegWit
+  - prime numbers
+  - number theory
+  - cryptography
+license: "NOASSERTION"
+version: "1.0.0"
+date-released: "2026-08-28"

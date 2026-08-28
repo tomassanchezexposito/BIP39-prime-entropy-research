@@ -1,13 +1,18 @@
 # Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![BIP39](https://img.shields.io/badge/BIP--39-Research-orange)
+![Bitcoin](https://img.shields.io/badge/Bitcoin-Native%20SegWit-yellow)
+![Status](https://img.shields.io/badge/status-experimental-red)
+
 > **Experimental research repository. Do not use the included generators as audited wallet-custody software. Never fund a mnemonic that has been published in this repository. Read [`DISCLAIMER.md`](DISCLAIMER.md) before running any generator.**
+
+**Experimental research on prime-number positional mappings, BIP-39 entropy construction, mnemonic generation, Bitcoin wallet security, and Native SegWit derivation.**
 
 This repository documents an experimental line of work connecting two representations built on the same 2,048-element index space:
 
 1. an arithmetic coordinate for odd integers and odd-prime positions, beginning with `C_n = 3 + 2n`; and
 2. the 2,048-word BIP-39 English index space, where each word index represents 11 bits.
-
-Experimental research on prime-number positional mappings, BIP-39 entropy construction, mnemonic generation, Bitcoin wallet security, and Native SegWit derivation.
 
 The project maps each local position `1..2048` to the odd prime at the same ordinal position and to the BIP-39 English word at that index. This creates an auditable representation:
 
