@@ -7,6 +7,8 @@ This repository documents an experimental line of work connecting two representa
 1. an arithmetic coordinate for odd integers and odd-prime positions, beginning with `C_n = 3 + 2n`; and
 2. the 2,048-word BIP-39 English index space, where each word index represents 11 bits.
 
+Experimental research on prime-number positional mappings, BIP-39 entropy construction, mnemonic generation, Bitcoin wallet security, and Native SegWit derivation.
+
 The project maps each local position `1..2048` to the odd prime at the same ordinal position and to the BIP-39 English word at that index. This creates an auditable representation:
 
 `local position ↔ odd-prime label ↔ BIP-39 word`
