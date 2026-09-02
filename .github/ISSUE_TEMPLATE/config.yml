@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security and usage limitations
+    url: https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/DISCLAIMER.md
+    about: Read the security limitations before reporting wallet-related issues.
+  - name: Architecture and interpretation
+    url: https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/ARCHITECTURE.md
+    about: Review the entropy and deterministic-transformation model.

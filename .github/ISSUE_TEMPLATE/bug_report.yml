@@ -1,0 +1,77 @@
+name: Bug report
+description: Report a reproducible software defect.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a reproducible problem.
+        **Never paste real seed phrases, private keys, xprv values, passphrases, or credentials.**
+
+  - type: input
+    id: source-file
+    attributes:
+      label: Source file / version
+      description: Exact Python filename and version affected.
+      placeholder: Generador_V2_7_AUTO_Turbo_Cronometros.py / V2.7
+    validations:
+      required: true
+
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or release
+      description: Commit SHA or release tag if known.
+      placeholder: main / v1.1.0 / commit SHA
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and Python version.
+      placeholder: Windows 11, Python 3.14.6
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reproducible sequence.
+      placeholder: |
+        1. Run ...
+        2. Enter ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Remove all secret material before pasting logs.
+      render: shell
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Security confirmation
+      options:
+        - label: I confirm that this issue contains no real wallet secrets or credentials.
+          required: true

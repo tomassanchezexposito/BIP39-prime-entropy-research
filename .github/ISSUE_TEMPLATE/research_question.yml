@@ -1,0 +1,55 @@
+name: Research question
+description: Ask a technical or theoretical question about the research.
+title: "[Research]: "
+labels:
+  - research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for questions about BIP-39, entropy accounting, prime-coordinate mappings, structural filters, statistics, reproducibility, or Bitcoin standards.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Research area
+      options:
+        - BIP-39 / entropy
+        - Prime-number positional mapping
+        - Structural filters / statistics
+        - Bitcoin derivation / BIP-32 / BIP-84
+        - Reproducibility
+        - Dataset analysis
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: State the research question precisely.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or observation
+      description: Identify source files, documentation, manifests, tests, calculations, or external standards relevant to the question.
+
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis or interpretation
+      description: Clearly separate your hypothesis from established project behavior.
+
+  - type: checkboxes
+    id: interpretation
+    attributes:
+      label: Interpretation checks
+      options:
+        - label: I understand that prime-number mappings are deterministic and are not claimed to add cryptographic entropy.
+          required: true
+        - label: I have not included real wallet secrets or credentials.
+          required: true

@@ -1,0 +1,78 @@
+name: Reproducibility report
+description: Report an independent attempt to reproduce documented behavior.
+title: "[Reproducibility]: "
+labels:
+  - reproducibility
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or release tested
+      placeholder: commit SHA or release tag
+    validations:
+      required: true
+
+  - type: input
+    id: source-file
+    attributes:
+      label: Source file / version
+      placeholder: Generador_V2_7_AUTO_Turbo_Cronometros.py / V2.7
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Windows 11, Python 3.14.6
+    validations:
+      required: true
+
+  - type: textarea
+    id: parameters
+    attributes:
+      label: Parameters
+      description: List the relevant input/configuration values.
+    validations:
+      required: true
+
+  - type: textarea
+    id: method
+    attributes:
+      label: Reproduction method
+      description: Explain the procedure used.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+    validations:
+      required: true
+
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options:
+        - Matched documented behavior
+        - Partially matched
+        - Did not match
+        - Inconclusive
+    validations:
+      required: true
+
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Verification artifacts
+      description: Provide non-secret hashes, manifests, test output, or public test vectors where useful.
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Security confirmation
+      options:
+        - label: I confirm that no real wallet secrets or credentials are included.
+          required: true
