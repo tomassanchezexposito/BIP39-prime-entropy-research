@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BIP39 Prime Entropy Research Dataset Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "dataset_type",
+    "public_test_data",
+    "generator",
+    "mnemonic",
+    "entropy_model",
+    "prime_mapping_adds_entropy",
+    "structural_filters_add_entropy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_type": {
+      "type": "string",
+      "const": "experimental_bip39_mnemonics"
+    },
+    "public_test_data": {
+      "type": "boolean",
+      "const": true
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri"
+    },
+    "git_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "python_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generator": {
+      "type": "object",
+      "required": [
+        "filename",
+        "version"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "mnemonic": {
+      "type": "object",
+      "required": [
+        "word_count",
+        "language"
+      ],
+      "properties": {
+        "word_count": {
+          "type": "integer",
+          "enum": [
+            12,
+            15,
+            18,
+            21,
+            24
+          ]
+        },
+        "language": {
+          "type": "string",
+          "const": "english"
+        }
+      }
+    },
+    "entropy_model": {
+      "type": "object",
+      "required": [
+        "source"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "entropy_bits": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "fixed_known_bits": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "csprng_bits": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "checksum_bits": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "prime_mapping_adds_entropy": {
+      "type": "boolean",
+      "const": false
+    },
+    "structural_filters_add_entropy": {
+      "type": "boolean",
+      "const": false
+    },
+    "filters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "duplicate_policy": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "global_uniqueness_claimed": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "properties": {
+        "start_value": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "end_value": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "groups_per_value": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "groups_per_file": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "total_groups": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "output_file_count": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "manifest_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "const": "SHA-256"
+        },
+        "hash_file": {
+          "type": "string"
+        }
+      }
+    },
+    "security_warning": {
+      "type": "string"
+    }
+  }
+}

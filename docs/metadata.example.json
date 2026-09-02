@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "example-v27-range",
+  "dataset_type": "experimental_bip39_mnemonics",
+  "public_test_data": true,
+  "created_at": null,
+  "repository": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research",
+  "git_commit": null,
+  "python_version": null,
+  "generator": {
+    "filename": "Generador_V2_7_AUTO_Turbo_Cronometros.py",
+    "version": "2.7"
+  },
+  "mnemonic": {
+    "word_count": 12,
+    "language": "english"
+  },
+  "entropy_model": {
+    "source": "python-secrets / operating-system CSPRNG",
+    "entropy_bits": 128,
+    "fixed_known_bits": 11,
+    "csprng_bits": 117,
+    "checksum_bits": 4,
+    "notes": "Example for a fixed known first BIP-39 position."
+  },
+  "prime_mapping_adds_entropy": false,
+  "structural_filters_add_entropy": false,
+  "filters": [
+    "generator-specific deterministic structural rejection filter"
+  ],
+  "duplicate_policy": {
+    "method": "SQLite SHA-256 phrase hashes",
+    "scope": "local database history",
+    "global_uniqueness_claimed": false
+  },
+  "generation": {
+    "start_value": null,
+    "end_value": null,
+    "groups_per_value": null,
+    "groups_per_file": null,
+    "total_groups": null,
+    "output_file_count": null,
+    "manifest_file": "MANIFIESTO.tsv"
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "hash_file": "SHA256SUMS.txt"
+  },
+  "security_warning": "Public experimental data. Never use published mnemonics to secure real assets."
+}

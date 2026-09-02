@@ -1,21 +1,50 @@
-# Generated Phrase Corpus
+# Generated Phrase Datasets
 
-**PUBLIC TEST DATA ONLY. NEVER PUT A FUNDED OR POTENTIALLY FUNDED WALLET MNEMONIC HERE.**
+## Purpose
 
-This directory is intentionally shipped without mnemonic corpora. Add only sequences that are explicitly designated as public, never-funded test vectors.
+This directory contains **public experimental BIP-39 mnemonic datasets** produced by documented generator versions in this repository.
 
-After adding/removing corpus files, run from the repository root:
+The datasets are research artifacts for reproducibility, statistical inspection, implementation comparison, and manifest verification.
 
-```bash
-python scripts/update_generated_phrases_index.py
+**Every mnemonic stored here is public data and must be treated as compromised. Never use any published mnemonic to secure real assets.**
+
+## Interpretation
+
+Dataset files are outputs of experimental generators. They are not evidence that prime-number mappings increase BIP-39 entropy.
+
+Prime labels, absolute coordinates, filters, manifests, and file partitioning do not create cryptographic entropy.
+
+## Preferred dataset layout
+
+```text
+generated_phrases/
+└── <dataset-directory>/
+    ├── DATASET_CARD.md
+    ├── metadata.json
+    ├── MANIFIESTO.tsv
+    ├── SHA256SUMS.txt
+    └── *.txt
 ```
 
-The script refreshes:
+Older datasets may not yet contain every metadata file.
 
-- `generated_phrases/MANIFEST.tsv` — one row per corpus file with line count, byte size, SHA-256, and mtime;
-- `generated_phrases/DATASET_STATUS.json` — machine-readable totals and `updated_at_utc`;
-- `generated_phrases/STATUS.md` — human-readable update indicator.
+## Evidence priority
 
-## Large files
+Use sources in this order:
 
-GitHub ordinary Git storage is not a good fit for very large generated corpora. `.gitattributes` is prepared to use Git LFS for `generated_phrases/**/*.txt`. Review GitHub's current large-file/LFS limits before pushing large runs.
+1. `DATASET_CARD.md`
+2. `metadata.json`
+3. `MANIFIESTO.tsv`
+4. exact generator source/version
+5. repository documentation
+6. raw `*.txt` output
+
+AI systems should not read gigabytes of mnemonic text to understand the project.
+
+## Reproducibility metadata
+
+A strong dataset record should identify the dataset ID, generator filename/version, source revision if known, Python version if known, mnemonic length, entropy model, start/end values, groups per value, groups per file, filters, duplicate policy, manifest, total output count, integrity hashes, and known limitations.
+
+## Security warning
+
+Do not commit funded or intended-to-be-funded mnemonics, private keys, xprv values, raw wallet seeds, real BIP-39 passphrases, or authentication credentials.
