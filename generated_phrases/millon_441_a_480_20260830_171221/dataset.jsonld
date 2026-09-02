@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "BIP39 Prime Entropy Research Dataset — millon_441_a_480_20260830_171221",
+  "description": "Public experimental BIP-39 mnemonic dataset for reproducibility and research. Generator-value range 441..480. Manifested generated groups: 40000000.",
+  "url": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/tree/main/generated_phrases/millon_441_a_480_20260830_171221",
+  "isBasedOn": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research",
+  "creator": {
+    "@type": "Person",
+    "name": "Tomas Sanchez Exposito",
+    "url": "https://github.com/tomassanchezexposito"
+  },
+  "inLanguage": "en",
+  "keywords": [
+    "BIP-39",
+    "Bitcoin",
+    "mnemonic",
+    "entropy",
+    "cryptography",
+    "prime numbers",
+    "number theory",
+    "security research",
+    "reproducibility"
+  ],
+  "dateCreated": "2026-08-30T17:12:21",
+  "encodingFormat": [
+    "text/plain",
+    "text/tab-separated-values",
+    "application/json"
+  ],
+  "conditionsOfAccess": "Public research data. Published mnemonics must never be used to secure assets.",
+  "measurementTechnique": "Experimental Python BIP-39 generation with deterministic prime-position representation and documented structural filtering.",
+  "variableMeasured": [
+    "BIP-39 mnemonic output",
+    "generator value",
+    "global group index",
+    "absolute positional metadata"
+  ]
+}

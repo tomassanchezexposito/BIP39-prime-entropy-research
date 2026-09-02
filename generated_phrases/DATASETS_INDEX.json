@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "repository": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research",
+  "dataset_count": 1,
+  "datasets": [
+    {
+      "dataset_id": "millon_441_a_480_20260830_171221",
+      "path": "generated_phrases\\millon_441_a_480_20260830_171221",
+      "created_at": "2026-08-30T17:12:21",
+      "generator": {
+        "filename": "Generador_V2_7_AUTO_Turbo_Cronometros.py",
+        "version": "2.7"
+      },
+      "start_value": 441,
+      "end_value": 480,
+      "total_groups": 40000000,
+      "public_test_data": true,
+      "metadata": "generated_phrases\\millon_441_a_480_20260830_171221\\metadata.json"
+    }
+  ]
+}\n

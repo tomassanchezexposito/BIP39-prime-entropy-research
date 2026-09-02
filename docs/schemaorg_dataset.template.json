@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "<DATASET_NAME>",
+  "description": "<DATASET_DESCRIPTION>",
+  "url": "<DATASET_GITHUB_URL>",
+  "isBasedOn": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research",
+  "creator": {
+    "@type": "Person",
+    "name": "Tomas Sanchez Exposito",
+    "url": "https://github.com/tomassanchezexposito"
+  },
+  "inLanguage": "en",
+  "keywords": [
+    "BIP-39",
+    "Bitcoin",
+    "mnemonic",
+    "entropy",
+    "cryptography",
+    "prime numbers",
+    "number theory",
+    "reproducibility"
+  ],
+  "conditionsOfAccess": "Public research data; published mnemonics must never be used to secure assets."
+}

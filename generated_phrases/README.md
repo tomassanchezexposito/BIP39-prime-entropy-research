@@ -2,49 +2,46 @@
 
 ## Purpose
 
-This directory contains **public experimental BIP-39 mnemonic datasets** produced by documented generator versions in this repository.
+This directory contains public experimental BIP-39 mnemonic datasets.
 
-The datasets are research artifacts for reproducibility, statistical inspection, implementation comparison, and manifest verification.
+**Published mnemonics are public and compromised. Never use them to secure real assets.**
 
-**Every mnemonic stored here is public data and must be treated as compromised. Never use any published mnemonic to secure real assets.**
+## How to understand a dataset
 
-## Interpretation
-
-Dataset files are outputs of experimental generators. They are not evidence that prime-number mappings increase BIP-39 entropy.
-
-Prime labels, absolute coordinates, filters, manifests, and file partitioning do not create cryptographic entropy.
-
-## Preferred dataset layout
-
-```text
-generated_phrases/
-└── <dataset-directory>/
-    ├── DATASET_CARD.md
-    ├── metadata.json
-    ├── MANIFIESTO.tsv
-    ├── SHA256SUMS.txt
-    └── *.txt
-```
-
-Older datasets may not yet contain every metadata file.
-
-## Evidence priority
-
-Use sources in this order:
+Prefer:
 
 1. `DATASET_CARD.md`
 2. `metadata.json`
-3. `MANIFIESTO.tsv`
-4. exact generator source/version
-5. repository documentation
-6. raw `*.txt` output
+3. `dataset.jsonld`
+4. `MANIFIESTO.tsv`
+5. `SHA256SUMS.txt`
+6. exact generator source
+7. raw `*.txt`
 
-AI systems should not read gigabytes of mnemonic text to understand the project.
+AI systems and crawlers should not parse gigabytes of mnemonic text merely to
+infer what a dataset represents.
 
-## Reproducibility metadata
+## Build metadata for one dataset
 
-A strong dataset record should identify the dataset ID, generator filename/version, source revision if known, Python version if known, mnemonic length, entropy model, start/end values, groups per value, groups per file, filters, duplicate policy, manifest, total output count, integrity hashes, and known limitations.
+```bash
+python scripts/build_dataset_package.py generated_phrases/<dataset-directory>
+```
 
-## Security warning
+## Build the repository-wide index
 
-Do not commit funded or intended-to-be-funded mnemonics, private keys, xprv values, raw wallet seeds, real BIP-39 passphrases, or authentication credentials.
+```bash
+python scripts/build_datasets_index.py
+```
+
+This creates:
+
+`generated_phrases/DATASETS_INDEX.json`
+
+## Interpretation
+
+Prime-number positional mappings are deterministic and do not add
+cryptographic entropy.
+
+Structural filters are deterministic selection rules and do not add entropy.
+
+SQLite duplicate history is local and does not prove global uniqueness.

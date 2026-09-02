@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Architecture of Infinity Dataset Metadata",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "dataset_type",
+    "public_test_data",
+    "generator",
+    "mnemonic",
+    "entropy_model",
+    "prime_mapping_adds_entropy",
+    "structural_filters_add_entropy",
+    "generation",
+    "files",
+    "security_warning"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_type": {
+      "const": "experimental_bip39_mnemonics"
+    },
+    "public_test_data": {
+      "const": true
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "repository": {
+      "type": "string"
+    },
+    "git_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generator": {
+      "type": "object",
+      "required": [
+        "filename",
+        "version"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "mnemonic": {
+      "type": "object",
+      "required": [
+        "word_count",
+        "language"
+      ],
+      "properties": {
+        "word_count": {
+          "type": "integer"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "entropy_model": {
+      "type": "object"
+    },
+    "prime_mapping_adds_entropy": {
+      "const": false
+    },
+    "structural_filters_add_entropy": {
+      "const": false
+    },
+    "duplicate_policy": {
+      "type": "object"
+    },
+    "generation": {
+      "type": "object"
+    },
+    "files": {
+      "type": "object"
+    },
+    "security_warning": {
+      "type": "string"
+    }
+  }
+}
