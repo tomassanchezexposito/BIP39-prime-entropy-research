@@ -9,20 +9,31 @@ authors:
 repository-code: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
 url: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
 abstract: >-
-  Experimental research repository linking prime-number positional mappings,
-  BIP-39 entropy construction, mnemonic generation, and Bitcoin wallet security,
-  with Python generators, checksum analysis, Native SegWit tooling, and
-  reproducible technical documentation.
+  Experimental research repository on BIP-39 mnemonic generation,
+  entropy construction, SHA-256 checksum analysis, prime-number positional
+  mappings, Bitcoin wallet security, Native SegWit derivation, reproducible
+  Python tooling, and public experimental mnemonic datasets. Prime-number
+  mappings are treated as deterministic representations and are not claimed
+  to add cryptographic entropy.
 keywords:
   - BIP-39
   - Bitcoin
+  - Bitcoin security
   - wallet security
+  - cryptography
   - entropy
   - mnemonic
+  - seed phrase
+  - HD wallet
+  - BIP-32
+  - BIP-44
+  - BIP-84
   - Native SegWit
+  - secp256k1
+  - SHA-256
   - prime numbers
   - number theory
-  - cryptography
-license: "NOASSERTION"
-version: "1.0.0"
-date-released: "2026-08-28"
+  - Python
+  - security research
+version: "1.1.0"
+date-released: "2026-09-02"
