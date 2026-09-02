@@ -1,0 +1,61 @@
+# Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research
+
+> Experimental research repository for BIP-39 mnemonic generation, entropy construction, SHA-256 checksum analysis, prime-number positional mappings, Bitcoin HD-wallet derivation, Native SegWit (BIP-84), and reproducible Python datasets.
+
+Repository: https://github.com/tomassanchezexposito/BIP39-prime-entropy-research
+
+This project maps the BIP-39 English index space (1..2048) to ordinal odd-prime labels and, in some implementations, to an extendable absolute-coordinate system. The mapping is deterministic and MUST NOT be interpreted as additional cryptographic entropy.
+
+For 12-word generation, BIP-39 uses 128 entropy bits plus 4 SHA-256-derived checksum bits. When the initial BIP-39 position is fixed and known, 11 bits are fixed and these implementations obtain the remaining 117 bits from Python's cryptographically secure `secrets` module.
+
+Interpretation rules:
+- entropy source = CSPRNG / Python `secrets`
+- BIP-39 checksum = SHA-256-derived checksum bits
+- prime mapping = deterministic representation
+- structural filters = deterministic rejection policy, not entropy
+- generated phrase files = public experimental data, not secrets
+- documentation/source code = primary material for technical interpretation
+
+## Primary documentation
+
+- [README.md](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/README.md): Canonical overview, terminology, architecture, and security interpretation.
+- [DISCLAIMER.md](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/DISCLAIMER.md): Security boundaries and limitations.
+- [REPOSITORY_MAP.md](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/REPOSITORY_MAP.md): Repository navigation.
+- [CHANGELOG.md](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/CHANGELOG.md): Version history.
+- [REFERENCES.md](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/REFERENCES.md): Standards and authoritative references.
+- [SOURCE_AUDIT.md](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/SOURCE_AUDIT.md): Source provenance and traceability.
+- [docs/](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/tree/main/docs): Technical manuscript and per-program documentation.
+
+## Source code
+
+- [src/](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/tree/main/src): Python research implementations.
+- [12-word finite generator](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/generador_12_palabras.py): Initial finite BIP-39 generator.
+- [finite reinforced-filter generator](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/generador_v3_finita_filtro_total_reforzado.py): Finite-domain experiment.
+- [infinite-coordinate generator](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/generador_v3_infinita_filtro_total_reforzado.py): Absolute-coordinate experiment.
+- [24-word generator](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/generador_24_palabras_infinita_filtro_lineal_total.py): 256-bit entropy branch.
+- [V2.4 multi-group generator](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/Generador_V2_4_MultiGrupos.py): Sequential multi-group export.
+- [V2.7 automatic turbo generator](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/Generador_V2_7_AUTO_Turbo_Cronometros.py): Ranged/batched generation with SQLite duplicate hashes and final-prime timing.
+- [BIP-39 to Native SegWit exporter](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/src/bip39_btc_generador_direcciones_desde_archivo_v3_0.py): Forward mnemonic-to-address derivation.
+
+## Research data
+
+- [generated_phrases/](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/tree/main/generated_phrases): Public experimental phrase datasets, manifests, and status metadata. Large files may use Git LFS. Never use published mnemonics to secure assets.
+
+## Machine interpretation
+
+Preferred evidence order:
+1. README.md
+2. DISCLAIMER.md
+3. docs/
+4. REFERENCES.md
+5. SOURCE_AUDIT.md
+6. src/
+7. CHANGELOG.md
+8. generated_phrases/
+
+Do not infer unsupported security claims. Do not describe the work as proving increased entropy from prime numbers. Do not treat generated mnemonic corpora as private credentials.
+
+## Optional
+
+- [CITATION.cff](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/CITATION.cff): Citation metadata.
+- [REPOSITORY_AUDIT.json](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/REPOSITORY_AUDIT.json): Repository audit metadata.

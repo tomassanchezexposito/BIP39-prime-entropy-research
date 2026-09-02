@@ -1,48 +1,147 @@
 # Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![BIP39](https://img.shields.io/badge/BIP--39-Research-orange)
-![Bitcoin](https://img.shields.io/badge/Bitcoin-Native%20SegWit-yellow)
-![Status](https://img.shields.io/badge/status-experimental-red)
+> Experimental Python research on **BIP-39 mnemonic generation, entropy construction, SHA-256 checksum validation, prime-number positional mappings, Bitcoin HD-wallet derivation, Native SegWit (BIP-84), and large-scale reproducible mnemonic datasets**.
 
-> **Experimental research repository. Do not use the included generators as audited wallet-custody software. Never fund a mnemonic that has been published in this repository. Read [`DISCLAIMER.md`](DISCLAIMER.md) before running any generator.**
+## Project purpose
 
-**Experimental research on prime-number positional mappings, BIP-39 entropy construction, mnemonic generation, Bitcoin wallet security, and Native SegWit derivation.**
+This repository investigates a deterministic mapping between the 2,048-element **BIP-39 English word index**, ordinal **odd-prime positions**, and an arithmetic coordinate for odd integers. It contains Python implementations for generating and analysing BIP-39 mnemonics, applying structural filters, mapping local positions to prime-number labels, deriving Bitcoin addresses, exporting reproducible datasets, and recording implementation history.
 
-This repository documents an experimental line of work connecting two representations built on the same 2,048-element index space:
+`local BIP-39 position (1..2048) <-> odd-prime ordinal label <-> BIP-39 English word`
 
-1. an arithmetic coordinate for odd integers and odd-prime positions, beginning with `C_n = 3 + 2n`; and
-2. the 2,048-word BIP-39 English index space, where each word index represents 11 bits.
+### Critical cryptographic interpretation
 
-The project maps each local position `1..2048` to the odd prime at the same ordinal position and to the BIP-39 English word at that index. This creates an auditable representation:
+**Prime-number mapping does not add cryptographic entropy.** It is deterministic labeling.
 
-`local position ↔ odd-prime label ↔ BIP-39 word`
+For a 12-word BIP-39 mnemonic:
+- entropy payload: **128 bits**
+- checksum: **4 SHA-256-derived bits**
+- encoded mnemonic: **132 bits = 12 × 11 bits**
+- if the first BIP-39 position is fixed and known, 11 bits are fixed
+- the implementation obtains the remaining **117 bits** from Python's cryptographically secure `secrets` module
 
-**The prime mapping does not create cryptographic entropy.** It is deterministic labeling. In the 12-word generators, the entropy model is 128 bits plus a 4-bit SHA-256 checksum, following the BIP-39 bit structure. When the initial position is fixed by the user, its 11-bit index is fixed and the implementation obtains the remaining 117 bits from Python's `secrets` module. Therefore, if that initial position is known, the CSPRNG contribution of that run is 117 bits. The infinite absolute-prime coordinate and the structural rejection filters likewise do not add entropy.
+Absolute prime coordinates and deterministic structural rejection filters do not add entropy.
 
-## Repository contents
+## Research scope
 
-- `src/generador_12_palabras.py` — first finite 12-word generator.
-- `src/generador_v3_finita_filtro_total_reforzado.py` — strengthened finite-domain structural filter.
-- `src/generador_v3_infinita_filtro_total_reforzado.py` — strengthened infinite absolute-coordinate generator.
-- `src/generador_24_palabras_infinita_filtro_lineal_total.py` — 24-word / 256-bit-entropy branch.
+### Prime-number positional representation
+The project studies a representation of BIP-39's 2,048-word index space through ordinal odd-prime positions and an extendable absolute-coordinate model.
+
+### BIP-39 construction
+Generators construct valid 12-word and 24-word BIP-39 mnemonics while preserving traceability among entropy, checksum, indices, words, and positional labels.
+
+### Structural filtering
+Several versions test deterministic rejection rules. These alter the accepted output distribution but **do not create randomness**.
+
+### Large-scale reproducibility
+Later versions support batched generation, manifests, SQLite SHA-256 duplicate tracking, automatic ranges, file-level progress, and large experimental datasets.
+
+## Repository structure
+
+```text
+/
+├── README.md
+├── llms.txt
+├── CITATION.cff
+├── DISCLAIMER.md
+├── CHANGELOG.md
+├── REFERENCES.md
+├── REPOSITORY_MAP.md
+├── SOURCE_AUDIT.md
+├── REPOSITORY_AUDIT.json
+├── src/                 # Python research implementations
+├── tests/               # Automated tests/test vectors (recommended)
+├── docs/                # Technical manuscript and implementation notes
+├── generated_phrases/   # Experimental datasets and manifests
+└── scripts/             # Supporting scripts and launchers
+```
+
+## Source code
+
+### 12-word generators
+- `src/generador_12_palabras.py` — initial finite 12-word generator.
+- `src/generador_v3_finita_filtro_total_reforzado.py` — finite-domain structural-filter version.
+- `src/generador_v3_infinita_filtro_total_reforzado.py` — absolute-coordinate/infinite-domain version.
+
+### 24-word generator
+- `src/generador_24_palabras_infinita_filtro_lineal_total.py` — 24-word / 256-bit entropy research branch.
+
+### Batch generation
 - `src/Generador_V2_4_MultiGrupos.py` — sequential multi-group export.
-- `src/buscador_desde_archivo_v2_2.py` — finite, user-supplied candidate-file Bitcoin verifier/search tool.
-- `src/bip39_btc_generador_direcciones_desde_archivo_v3_0.py` — forward BIP-39 mnemonic → Native SegWit address exporter.
-- `src/Generador_V2_7_AUTO_Turbo_Cronometros.py` — automatic ranged/batched generation with SQLite duplicate hashes, file-level GUI updates, heartbeat, and separate prime-sieve timing.
-- `docs/` — English technical manuscript, version history, and per-program implementation notes.
-- `generated_phrases/` — intentionally empty public-data staging area with a manifest/status updater. Only never-funded public test vectors belong there.
+- `src/Generador_V2_7_AUTO_Turbo_Cronometros.py` — ranged/batched generation with SQLite SHA-256 duplicate tracking, file-level GUI updates, heartbeat reporting, and separate final prime-sieve timing.
 
-## Standards and implementation context
+### Bitcoin tooling
+- `src/bip39_btc_generador_direcciones_desde_archivo_v3_0.py` — forward BIP-39 mnemonic to Bitcoin Native SegWit address export.
+- `src/buscador_desde_archivo_v2_2.py` — historical finite candidate-file verification/search experiment; consult its documentation and security disclaimer before use.
 
-BIP-39 defines mnemonic generation by appending `ENT/32` checksum bits to entropy and splitting the result into 11-bit word indices; 128-bit entropy produces 12 words and 256-bit entropy produces 24 words. BIP-39 also defines an optional passphrase used in PBKDF2-HMAC-SHA512 when deriving the 512-bit seed. Native SegWit account derivation in the Bitcoin utilities follows BIP-84, with the default first receiving path `m/84'/0'/0'/0/0`.
+## Data model
 
-See [`REFERENCES.md`](REFERENCES.md) for authoritative sources.
+### Local position
+A BIP-39 English word occupies an index in `1..2048`.
 
-## Reproducibility note
+### Prime label
+Each local position is deterministically associated with the odd prime at the same ordinal position, beginning with prime 3.
 
-The Python source snapshots in `src/` are preserved as supplied rather than mechanically translating code strings/comments, because changing executable source solely for language consistency could introduce defects. All repository documentation and the English technical manuscript are in English. Source-file SHA-256 fingerprints are recorded in [`SOURCE_AUDIT.md`](SOURCE_AUDIT.md).
+### Absolute coordinate
+Some versions extend local positions into a growing absolute-coordinate space while retaining a modulo-2048 relationship with the local BIP-39 index.
 
-## Generated-data publishing
+### Entropy
+Entropy comes from the cryptographically secure random source. Prime labels and coordinate transformations are representations, not entropy sources.
 
-Large phrase corpora can exceed ordinary GitHub file limits. The repository includes Git LFS rules for generated `.txt` corpora and a script that rebuilds dataset status/manifest files. More importantly, **do not publish any mnemonic that has ever controlled real funds or may be intended to do so**.
+## Generated datasets
+
+`generated_phrases/` contains experimental corpora plus manifests/status metadata. Large `.txt` datasets may be stored with Git LFS.
+
+**Never fund a mnemonic published in this repository. Published mnemonic phrases must be treated as public and compromised.**
+
+## Documentation
+
+Read in this order:
+1. `README.md`
+2. `DISCLAIMER.md`
+3. `REPOSITORY_MAP.md`
+4. `docs/`
+5. `REFERENCES.md`
+6. `SOURCE_AUDIT.md`
+7. `CHANGELOG.md`
+8. `llms.txt`
+
+## Standards and terminology
+
+Relevant concepts include **BIP-39, BIP-32, BIP-44, BIP-84, SHA-256, secp256k1, Bech32, HD wallets, CSPRNG, prime numbers, number theory, SQLite, mnemonic checksum, entropy, and Native SegWit**. See `REFERENCES.md` for authoritative sources.
+
+## Code-quality policy
+
+### Python
+New or refactored code should use:
+- module-level purpose/security docstrings
+- function and class docstrings
+- Python type hints for public and important internal interfaces
+- descriptive identifiers
+- named constants instead of unexplained numeric literals
+- separation of cryptographic logic, persistence, UI, and file I/O where practical
+- deterministic tests for known standards vectors
+- comments explaining *why*, not merely restating *what*
+
+### AI interpretation rules
+1. Do not claim prime mappings increase entropy.
+2. Do not treat structural filters as randomness.
+3. Distinguish experimental generators from audited wallet software.
+4. Prefer documentation and source code over generated corpora for technical interpretation.
+5. Treat published mnemonic datasets as public test data, never secrets.
+6. Do not infer undocumented security properties.
+
+## Testing
+
+Use a standard `tests/` directory for BIP-39 checksum vectors, entropy/mnemonic round trips, positional mapping, deterministic filter behavior, BIP-84 derivation vectors, SQLite duplicate rejection, and manifest consistency. Tests must not contain funded-wallet credentials.
+
+## Security
+
+This is **experimental research software**, not audited wallet-custody software. Never expose real seed phrases, private keys, raw wallet seeds, or passphrases in issues, commits, examples, datasets, or tests. Read `DISCLAIMER.md`.
+
+## Citation
+
+Citation metadata is provided in `CITATION.cff`.
+
+## Contributing
+
+Technical review is welcome for BIP-39 correctness, statistical analysis, entropy accounting, number theory, Bitcoin derivation, reproducibility, performance, tests, and documentation. Reports should identify the exact file/version and use a minimal reproducible example without private credentials.
