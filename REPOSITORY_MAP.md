@@ -13,11 +13,13 @@ This file is the compact directory map for humans, crawlers, code assistants, an
 | `ARCHITECTURE.md` | Conceptual architecture |
 | `REPOSITORY_MAP.md` | This navigation map |
 | `CITATION.cff` | Citation metadata |
+| `LICENSE` | MIT License |
 | `DISCLAIMER.md` | Security and usage limitations |
 | `CONTRIBUTING.md` | Contribution rules |
 | `CHANGELOG.md` | Project history |
 | `REFERENCES.md` | Standards and authoritative references |
 | `SOURCE_AUDIT.md` | Source provenance / traceability |
+| `ai-index.json` | Machine-readable project discovery index |
 | `pyproject.toml` | Python/test configuration |
 
 ## `src/`
@@ -92,6 +94,9 @@ Raw `*.txt` files should be read only after metadata.
 | `RESEARCH_SUMMARY.md` | Research scope, claims, and non-claims |
 | `REPRODUCIBILITY.md` | Reproduction protocol |
 | `VERSION_MATRIX.md` | Historical implementation evolution |
+| `SCHOLARLY_DISCOVERY.md` | Scholarly discovery strategy |
+| `ZENODO_PUBLICATION.md` | Zenodo archival publication workflow |
+| `CITATION_GUIDE.md` | Citation and DOI guidance |
 
 ## `docs/` — architecture
 
@@ -126,6 +131,36 @@ Raw `*.txt` files should be read only after metadata.
 | `HUGGINGFACE_DATASET_CARD_TEMPLATE.md` | Hugging Face preparation |
 | `HUGGINGFACE_PUBLISHING.md` | Hugging Face publication guidance |
 
+## `docs/` — dissemination
+
+| File | Purpose |
+|---|---|
+| `DISSEMINATION_STRATEGY.md` | External dissemination strategy |
+| `ZENODO_COMMUNITIES_GUIDE.md` | Zenodo Communities submission guidance |
+| `OPENAIRE_GUIDE.md` | OpenAIRE discovery guidance |
+| `INSTITUTIONAL_OUTREACH.md` | Institutional outreach guidance |
+| `PHASE_10_ACTION_PLAN.md` | External dissemination action plan |
+
+## `docs/reports/`
+
+Long-form project history and publication reports.
+
+| File | Purpose |
+|---|---|
+| `PROJECT_PUBLICATION_AND_DISSEMINATION_REPORT_EN.md` | Complete publication, optimization, archival, citation and dissemination history of the project |
+
+This report records the technical stabilization, GitHub publication process, Git LFS setup, testing and CI, dataset metadata, reproducibility work, AI-oriented navigation, Zenodo DOI publication, MIT licensing, and the external dissemination plan.
+
+## `outreach/`
+
+Reusable communication material for external dissemination.
+
+| File | Purpose |
+|---|---|
+| `ACADEMIC_CONTACT_TEMPLATE.md` | Academic and research-group outreach template |
+| `TECHNICAL_COMMUNITY_POST.md` | Technical community publication template |
+| `LINKEDIN_POST.md` | Professional dissemination draft |
+
 ## `.github/`
 
 GitHub automation and collaboration metadata.
@@ -145,6 +180,15 @@ README
 → RESEARCH_SUMMARY
 → ARCHITECTURE
 → TECHNICAL_ARCHITECTURE
+```
+
+### Understand how the repository was published and optimized
+
+```text
+README
+→ docs/reports/PROJECT_PUBLICATION_AND_DISSEMINATION_REPORT_EN.md
+→ REPOSITORY_MAP
+→ VERSION_MATRIX
 ```
 
 ### Analyze cryptographic construction
@@ -185,6 +229,33 @@ REPRODUCIBILITY
 → tests
 → manifest/hashes
 ```
+
+### Review publication and dissemination history
+
+```text
+PROJECT_PUBLICATION_AND_DISSEMINATION_REPORT_EN.md
+→ ZENODO_PUBLICATION.md
+→ CITATION_GUIDE.md
+→ DISSEMINATION_STRATEGY.md
+```
+
+## Persistent research identity
+
+Repository:
+
+`https://github.com/tomassanchezexposito/BIP39-prime-entropy-research`
+
+Archived software release:
+
+`v1.1.0`
+
+Zenodo DOI:
+
+`10.5281/zenodo.22257814`
+
+License:
+
+`MIT`
 
 ## Interpretation invariant
 
