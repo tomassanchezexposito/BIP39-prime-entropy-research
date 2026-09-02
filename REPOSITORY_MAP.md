@@ -1,40 +1,191 @@
 # Repository Map
 
-```text
-.
-├── README.md
-├── DISCLAIMER.md
-├── CHANGELOG.md
-├── REFERENCES.md
-├── SOURCE_AUDIT.md
-├── REPOSITORY_MAP.md
-├── LICENSE-NOT-SELECTED.md
-├── .gitignore
-├── .gitattributes
-├── src/
-│   ├── datos_2048.json
-│   ├── generador_12_palabras.py
-│   ├── generador_v3_finita_filtro_total_reforzado.py
-│   ├── generador_v3_infinita_filtro_total_reforzado.py
-│   ├── generador_24_palabras_infinita_filtro_lineal_total.py
-│   ├── Generador_V2_4_MultiGrupos.py
-│   ├── buscador_desde_archivo_v2_2.py
-│   ├── bip39_btc_generador_direcciones_desde_archivo_v3_0.py
-│   └── Generador_V2_7_AUTO_Turbo_Cronometros.py
-├── docs/
-│   ├── Architecture_of_Infinity_EN_PUBLIC_SAFE.docx
-│   ├── PUBLICATION_NOTE.md
-│   └── programs/
-│       └── [one implementation note per requested program]
-├── generated_phrases/
-│   ├── README.md
-│   ├── IMPORT_NOTES.md
-│   ├── STATUS.md
-│   ├── DATASET_STATUS.json
-│   ├── MANIFEST.tsv
-│   └── .gitkeep
-└── scripts/
-    └── update_generated_phrases_index.py
+## Purpose
+
+This file is the compact directory map for humans, crawlers, code assistants, and AI retrieval systems.
+
+## Root
+
+| Path | Purpose |
+|---|---|
+| `README.md` | Canonical overview and primary entry point |
+| `llms.txt` | AI/agent-oriented navigation |
+| `ARCHITECTURE.md` | Conceptual architecture |
+| `REPOSITORY_MAP.md` | This navigation map |
+| `CITATION.cff` | Citation metadata |
+| `DISCLAIMER.md` | Security and usage limitations |
+| `CONTRIBUTING.md` | Contribution rules |
+| `CHANGELOG.md` | Project history |
+| `REFERENCES.md` | Standards and authoritative references |
+| `SOURCE_AUDIT.md` | Source provenance / traceability |
+| `pyproject.toml` | Python/test configuration |
+
+## `src/`
+
+Historical Python research implementations.
+
+Read `docs/MODULE_MAP.md` before interpreting filenames as current architecture.
+
+Important families include:
+
+- finite 12-word generators
+- reinforced-filter generators
+- absolute/infinite-coordinate generators
+- 24-word branch
+- V2.4/V2.5/V2.6/V2.7 batch generators
+- V2.7 large-database compatibility fix
+- forward Bitcoin address derivation utilities
+- finite file-based verification utilities
+
+## `tests/`
+
+Automated deterministic tests.
+
+Primary current test module:
+
+`tests/test_v27_core.py`
+
+Run:
+
+```bash
+python -m pytest
 ```
 
-The complete, unredacted English translation of the manuscript is delivered separately from the public-repository package because the source manuscript contains exact mnemonic material. See `docs/PUBLICATION_NOTE.md`.
+## `scripts/`
+
+Repository maintenance and dataset tooling.
+
+| Script | Purpose |
+|---|---|
+| `generate_sha256s.py` | Dataset file integrity hashes |
+| `build_dataset_package.py` | Dataset card, metadata, JSON-LD, hashes |
+| `build_datasets_index.py` | Repository-wide dataset discovery index |
+
+## `generated_phrases/`
+
+Public experimental mnemonic datasets.
+
+Start with:
+
+`generated_phrases/README.md`
+
+Machine discovery:
+
+`generated_phrases/DATASETS_INDEX.json`
+
+Preferred per-dataset evidence:
+
+```text
+DATASET_CARD.md
+metadata.json
+dataset.jsonld
+MANIFIESTO.tsv
+SHA256SUMS.txt
+```
+
+Raw `*.txt` files should be read only after metadata.
+
+## `docs/` — research
+
+| File | Purpose |
+|---|---|
+| `RESEARCH_SUMMARY.md` | Research scope, claims, and non-claims |
+| `REPRODUCIBILITY.md` | Reproduction protocol |
+| `VERSION_MATRIX.md` | Historical implementation evolution |
+
+## `docs/` — architecture
+
+| File | Purpose |
+|---|---|
+| `TECHNICAL_ARCHITECTURE.md` | Software architecture |
+| `MODULE_MAP.md` | Semantic source-file map |
+| `DATA_FLOW.md` | End-to-end candidate/data flow |
+| `API_REFERENCE.md` | Important function contracts |
+| `BIP39_PIPELINE.md` | BIP-39 construction |
+| `PRIME_COORDINATE_MODEL.md` | Prime/local/absolute coordinate model |
+| `SQLITE_MODEL.md` | Duplicate-history persistence |
+| `AI_CODE_READING_GUIDE.md` | AI-specific evidence and reading order |
+
+## `docs/` — quality and safety
+
+| File | Purpose |
+|---|---|
+| `SECURITY_MODEL.md` | Security boundaries |
+| `CODE_QUALITY.md` | Code-quality policy |
+| `GLOSSARY.md` | Canonical terminology |
+
+## `docs/` — datasets
+
+| File | Purpose |
+|---|---|
+| `DATASET_DISCOVERY.md` | Dataset discovery rules |
+| `dataset_metadata.schema.json` | Metadata JSON Schema |
+| `DATASET_CARD_TEMPLATE.md` | Dataset-card template |
+| `DATASET_CARD_TEMPLATE_V2.md` | Extended dataset-card template |
+| `schemaorg_dataset.template.json` | schema.org Dataset template |
+| `HUGGINGFACE_DATASET_CARD_TEMPLATE.md` | Hugging Face preparation |
+| `HUGGINGFACE_PUBLISHING.md` | Hugging Face publication guidance |
+
+## `.github/`
+
+GitHub automation and collaboration metadata.
+
+Contains:
+
+- GitHub Actions tests
+- issue forms
+- pull-request template
+
+## Recommended reading paths
+
+### Understand the project
+
+```text
+README
+→ RESEARCH_SUMMARY
+→ ARCHITECTURE
+→ TECHNICAL_ARCHITECTURE
+```
+
+### Analyze cryptographic construction
+
+```text
+BIP39_PIPELINE
+→ SECURITY_MODEL
+→ tests
+→ exact source version
+```
+
+### Analyze prime mapping
+
+```text
+PRIME_COORDINATE_MODEL
+→ DATA_FLOW
+→ exact source version
+```
+
+### Analyze a dataset
+
+```text
+DATASETS_INDEX.json
+→ DATASET_CARD.md
+→ metadata.json
+→ dataset.jsonld
+→ MANIFIESTO.tsv
+→ SHA256SUMS.txt
+→ raw TXT
+```
+
+### Reproduce results
+
+```text
+REPRODUCIBILITY
+→ VERSION_MATRIX
+→ exact source
+→ tests
+→ manifest/hashes
+```
+
+## Interpretation invariant
+
+Prime labels, absolute coordinates, structural filters, SQLite duplicate history, and metadata are deterministic mechanisms and must not be counted as cryptographic entropy.

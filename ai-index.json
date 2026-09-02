@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "name": "Architecture of Infinity: BIP39 Prime Entropy Research",
+  "repository": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research",
+  "type": "experimental-computational-research",
+  "language": [
+    "Python",
+    "English documentation"
+  ],
+  "primary_topics": [
+    "BIP-39",
+    "Bitcoin",
+    "cryptographic entropy",
+    "SHA-256",
+    "prime-number positional mapping",
+    "number theory",
+    "HD wallets",
+    "BIP-84",
+    "Native SegWit",
+    "reproducibility"
+  ],
+  "machine_entry_points": {
+    "llms": "llms.txt",
+    "overview": "README.md",
+    "repository_map": "REPOSITORY_MAP.md",
+    "architecture": "docs/TECHNICAL_ARCHITECTURE.md",
+    "research_summary": "docs/RESEARCH_SUMMARY.md",
+    "ai_reading_guide": "docs/AI_CODE_READING_GUIDE.md",
+    "dataset_index": "generated_phrases/DATASETS_INDEX.json"
+  },
+  "interpretation_invariants": {
+    "prime_mapping_adds_entropy": false,
+    "absolute_coordinates_add_entropy": false,
+    "structural_filters_add_entropy": false,
+    "sqlite_duplicate_tracking_is_global_uniqueness": false,
+    "published_mnemonics_are_secret": false
+  },
+  "security": {
+    "published_mnemonics": "public test data",
+    "real_wallet_secrets_allowed": false
+  },
+  "license": {
+    "selected": false,
+    "note": "Do not infer reuse rights until an explicit license is published."
+  }
+}
