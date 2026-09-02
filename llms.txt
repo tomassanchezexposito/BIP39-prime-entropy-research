@@ -4,20 +4,27 @@
 
 Repository: https://github.com/tomassanchezexposito/BIP39-prime-entropy-research
 
+Archived software release: https://doi.org/10.5281/zenodo.22257814
+
+Version: v1.1.0
+
+License: MIT
+
 Interpretation rules: cryptographic randomness comes from the documented CSPRNG input; BIP-39 checksum bits are deterministic; prime-number mappings are deterministic representations; absolute-coordinate mappings are deterministic; structural filters are deterministic selection rules; SQLite duplicate history is local persistence and does not prove global uniqueness; published mnemonic files are public test data and must never secure assets.
 
 For the documented V2.7 12-word path with a fixed known first BIP-39 position, 11 entropy bits are fixed by that position and the implementation obtains the remaining 117 entropy bits from Python `secrets` / the operating-system CSPRNG. The four BIP-39 checksum bits are SHA-256-derived.
 
-When documentation and implementation appear inconsistent, prefer the exact source version and deterministic tests, then flag the documentation inconsistency. Do not infer a license that is not explicitly published.
+When documentation and implementation appear inconsistent, prefer the exact source version and deterministic tests, then flag the documentation inconsistency.
 
 ## Primary documentation
 
-- [README](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/README.md): Canonical project overview, scope, terminology, security interpretation, and navigation.
+- [README](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/README.md): Canonical project overview, DOI, license, scope, terminology, and navigation.
 - [Research summary](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/RESEARCH_SUMMARY.md): Research questions, supported claims, non-claims, and review areas.
 - [Conceptual architecture](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/ARCHITECTURE.md): High-level conceptual model.
 - [Technical architecture](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/TECHNICAL_ARCHITECTURE.md): Software layers, dependency direction, and system flow.
 - [Repository map](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/REPOSITORY_MAP.md): File and directory navigation.
-- [Glossary](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/GLOSSARY.md): Canonical terminology.
+- [Citation metadata](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/CITATION.cff): Machine-readable citation metadata for v1.1.0.
+- [MIT License](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/LICENSE): Reuse license.
 
 ## Mathematical and cryptographic model
 
@@ -38,9 +45,8 @@ When documentation and implementation appear inconsistent, prefer the exact sour
 ## Reproducibility and versions
 
 - [Reproducibility guide](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/REPRODUCIBILITY.md): Environment, commit, parameters, SQLite state, manifests, hashes, and replication levels.
-- [Version matrix](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/VERSION_MATRIX.md): Evolution of finite, infinite, 24-word, V2.4, V2.5, V2.6, V2.7, and supporting tools.
-- [Changelog](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/CHANGELOG.md): Version history.
-- [Source audit](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/SOURCE_AUDIT.md): Source provenance and traceability.
+- [Version matrix](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/VERSION_MATRIX.md): Historical implementation evolution.
+- [Zenodo v1.1.0](https://doi.org/10.5281/zenodo.22257814): Persistent archival software release.
 
 ## Datasets
 
@@ -48,7 +54,6 @@ When documentation and implementation appear inconsistent, prefer the exact sour
 - [Dataset index](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/generated_phrases/DATASETS_INDEX.json): Repository-wide machine-readable dataset discovery index.
 - [Dataset discovery specification](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/DATASET_DISCOVERY.md): Evidence order and AI indexing guidance.
 - [Dataset metadata schema](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/dataset_metadata.schema.json): JSON Schema for project dataset metadata.
-- [Hugging Face publishing guide](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/docs/HUGGINGFACE_PUBLISHING.md): Dataset-card preparation and license constraint.
 
 ## Quality, contribution, and safety
 
@@ -56,7 +61,6 @@ When documentation and implementation appear inconsistent, prefer the exact sour
 - [Contributing](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/CONTRIBUTING.md): Contribution and testing rules.
 - [Disclaimer](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/DISCLAIMER.md): Security and usage limitations.
 - [References](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/REFERENCES.md): Standards and authoritative references.
-- [Citation metadata](https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/blob/main/CITATION.cff): Repository citation metadata.
 
 ## Optional
 

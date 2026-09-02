@@ -1,39 +1,32 @@
 cff-version: 1.2.0
+message: "If you use this software in research, please cite the archived Zenodo release."
 title: "Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research"
-message: "If you use this repository, please cite it using the metadata from this file."
 type: software
 authors:
-  - given-names: "Tomas"
-    family-names: "Sanchez Exposito"
-    alias: "tomassanchezexposito"
-repository-code: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
+  - family-names: "Sánchez Exposito"
+    given-names: "Tomás"
+version: "1.1.0"
+date-released: 2026-09-02
+doi: "10.5281/zenodo.22257814"
 url: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
-abstract: >-
-  Experimental research repository on BIP-39 mnemonic generation,
-  entropy construction, SHA-256 checksum analysis, prime-number positional
-  mappings, Bitcoin wallet security, Native SegWit derivation, reproducible
-  Python tooling, and public experimental mnemonic datasets. Prime-number
-  mappings are treated as deterministic representations and are not claimed
-  to add cryptographic entropy.
+repository-code: "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
+license: MIT
 keywords:
   - BIP-39
   - Bitcoin
-  - Bitcoin security
-  - wallet security
-  - cryptography
-  - entropy
+  - cryptographic entropy
   - mnemonic
-  - seed phrase
-  - HD wallet
-  - BIP-32
-  - BIP-44
-  - BIP-84
-  - Native SegWit
-  - secp256k1
   - SHA-256
   - prime numbers
   - number theory
+  - HD wallet
+  - BIP-84
+  - Native SegWit
+  - reproducibility
   - Python
-  - security research
-version: "1.1.0"
-date-released: "2026-09-02"
+abstract: >-
+  Experimental research repository for BIP-39 mnemonic generation, entropy
+  construction and accounting, SHA-256 checksum analysis, deterministic
+  prime-number positional mappings, absolute-coordinate models, structural
+  filters, Bitcoin wallet derivation utilities, reproducibility tooling,
+  automated tests, and machine-readable public research datasets.

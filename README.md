@@ -1,8 +1,21 @@
 # BIP39 Prime Entropy Research
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22257814.svg)](https://doi.org/10.5281/zenodo.22257814)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Experimental Python research on **BIP-39 mnemonic generation, cryptographic entropy accounting, SHA-256 checksum construction, deterministic prime-number positional mappings, absolute coordinates, structural filters, Bitcoin HD-wallet derivation, Native SegWit (BIP-84), reproducible datasets, and large-scale generation tooling**.
 
 > **Critical interpretation:** prime-number mappings, absolute-coordinate transforms, structural filters, SQLite duplicate tracking, manifests, and file partitioning are deterministic mechanisms. They **do not add cryptographic entropy**.
+
+## Archived research release
+
+The citable archived software release is:
+
+**Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research — v1.1.0**
+
+DOI: **10.5281/zenodo.22257814**
+
+Citation metadata is available in [`CITATION.cff`](CITATION.cff).
 
 ## Project purpose
 
@@ -176,11 +189,17 @@ Never submit real:
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff).
+If you use this software in research, cite the archived Zenodo release:
 
-## License status
+**Sánchez Exposito, T. (2026). Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research (Version v1.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22257814**
 
-No reuse license should be inferred unless a license is explicitly selected and published in the repository.
+See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
+
+## License
+
+The software and associated repository documentation are released under the **MIT License**. See [`LICENSE`](LICENSE).
+
+Public generated mnemonic datasets remain public experimental material and must never be used as wallet secrets.
 
 ## Keywords
 

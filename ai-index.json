@@ -1,7 +1,18 @@
 {
-  "schema_version": "1.0",
-  "name": "Architecture of Infinity: BIP39 Prime Entropy Research",
+  "schema_version": "1.1",
+  "name": "Architecture of Infinity: Prime Coordinates and BIP-39 Mnemonic Research",
   "repository": "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research",
+  "archived_release": {
+    "version": "v1.1.0",
+    "doi": "10.5281/zenodo.22257814",
+    "doi_url": "https://doi.org/10.5281/zenodo.22257814",
+    "publisher": "Zenodo",
+    "publication_date": "2026-09-02"
+  },
+  "license": {
+    "spdx": "MIT",
+    "file": "LICENSE"
+  },
   "type": "experimental-computational-research",
   "language": [
     "Python",
@@ -22,6 +33,8 @@
   "machine_entry_points": {
     "llms": "llms.txt",
     "overview": "README.md",
+    "citation": "CITATION.cff",
+    "license": "LICENSE",
     "repository_map": "REPOSITORY_MAP.md",
     "architecture": "docs/TECHNICAL_ARCHITECTURE.md",
     "research_summary": "docs/RESEARCH_SUMMARY.md",
@@ -38,9 +51,5 @@
   "security": {
     "published_mnemonics": "public test data",
     "real_wallet_secrets_allowed": false
-  },
-  "license": {
-    "selected": false,
-    "note": "Do not infer reuse rights until an explicit license is published."
   }
 }
