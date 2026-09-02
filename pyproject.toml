@@ -1,0 +1,42 @@
+[project]
+name = "bip39-prime-entropy-research"
+version = "1.1.0"
+description = "Experimental research on BIP-39 entropy construction, prime-number positional mappings, Bitcoin wallet derivation, and reproducible mnemonic datasets."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Tomas Sanchez Exposito" }
+]
+keywords = [
+  "bip39",
+  "bitcoin",
+  "cryptography",
+  "entropy",
+  "mnemonic",
+  "bip32",
+  "bip44",
+  "bip84",
+  "native-segwit",
+  "secp256k1",
+  "sha256",
+  "prime-numbers",
+  "number-theory",
+  "security-research"
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research"
+Documentation = "https://github.com/tomassanchezexposito/BIP39-prime-entropy-research/tree/main/docs"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
