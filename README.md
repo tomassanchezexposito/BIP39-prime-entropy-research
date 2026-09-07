@@ -130,6 +130,22 @@ They are part of the research record. Do not assume that every historical file r
 
 For semantic navigation, read [`docs/MODULE_MAP.md`](docs/MODULE_MAP.md) before analyzing individual source files.
 
+### Bidirectional positional-anchor generators
+
+Two experimental variants extend the absolute-coordinate model by allowing the BIP-39 word associated with a chosen absolute coordinate to be anchored at a selected mnemonic slot while reconstructing compatible absolute coordinates backward and forward around that anchor.
+
+- [`src/v2_3_anchor_12_words/`](src/v2_3_anchor_12_words/) — **V2.3-A, 12 words**. Selectable anchor slot 1..12; standard 128-bit BIP-39 entropy plus 4 checksum bits. For slots 1..11, the anchored word fixes 11 entropy bits and the remaining 117 bits are CSPRNG-generated. Slot 12 spans 7 entropy bits plus 4 checksum bits and therefore uses checksum-compatible rejection sampling.
+- [`src/v2_3_anchor_24_words/`](src/v2_3_anchor_24_words/) — **V2.3-A24, 24 words**. Selectable anchor slot 1..24; standard 256-bit BIP-39 entropy plus 8 checksum bits. For slots 1..23, the anchored word fixes 11 entropy bits and the remaining 245 bits are CSPRNG-generated. Slot 24 spans 3 entropy bits plus 8 checksum bits and therefore uses checksum-compatible rejection sampling.
+
+In both variants, absolute coordinates are lifted backward and forward so that the requested anchor remains at the selected slot and the resulting absolute sequence is positive and strictly increasing. The prime-coordinate mapping, absolute-coordinate transformation, structural rejection filter, and SQLite history remain deterministic mechanisms and **do not add cryptographic entropy**.
+
+Verification modules:
+
+- [`tests/test_V2_3A_ancla_posicional.py`](tests/test_V2_3A_ancla_posicional.py) — exhaustive word/slot checks for the 12-word variant plus randomized bidirectional-lift and integration tests.
+- [`tests/test_V2_3A24_ancla_posicional.py`](tests/test_V2_3A24_ancla_posicional.py) — exhaustive word/slot checks for the 24-word variant plus randomized bidirectional-lift and integration tests.
+
+These generators are experimental research software, not audited wallet-custody software. Mnemonics generated or published for research must be treated as test material and must not be used to secure real assets.
+
 ## Tests and continuous integration
 
 Run:
